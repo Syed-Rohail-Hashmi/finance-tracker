@@ -1,0 +1,11 @@
+RewriteEngine On
+
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|json|lock|md)$">
+    Require all denied
+</FilesMatch>
+
+RewriteRule ^(app|config|includes|database|libraries|vendor)/ - [F,L]
